@@ -1,6 +1,8 @@
 
 https://catalog.ngc.nvidia.com/search?orderBy=scoreDESC&query=tensorrt+llm
 
+https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tensorrt-llm/containers/devel?version=1.2.0rc8
+
 docker run --rm -it --ipc=host --ulimit memlock=-1 --ulimit stack=67108864  \
            --gpus=all \
            --env "CCACHE_DIR=/code/tensorrt_llm/cpp/.ccache" \
@@ -9,10 +11,9 @@ docker run --rm -it --ipc=host --ulimit memlock=-1 --ulimit stack=67108864  \
            --workdir /code/tensorrt_llm \
            --tmpfs /tmp:exec \
            --volume .:/code/tensorrt_llm \
-           nvcr.io/nvidia/tensorrt-llm/devel:1.2.0rc6.post3
+           nvcr.io/nvidia/tensorrt-llm/devel:1.0.0
 
-
-docker run --rm -it --ipc=host --ulimit memlock=-1 --ulimit stack=67108864  --gpus=all --env "CCACHE_DIR=/code/tensorrt_llm/cpp/.ccache" --env "CCACHE_BASEDIR=/code/tensorrt_llm" --env "CONAN_HOME=/code/tensorrt_llm/cpp/.conan" --workdir /code/tensorrt_llm --tmpfs /tmp:exec --volume .:/code/tensorrt_llm nvcr.io/nvidia/tensorrt-llm/devel:1.2.0rc6.post3
+docker run --rm -it --ipc=host --ulimit memlock=-1 --ulimit stack=67108864  --gpus=all --env "CCACHE_DIR=/code/tensorrt_llm/cpp/.ccache" --env "CCACHE_BASEDIR=/code/tensorrt_llm" --env "CONAN_HOME=/code/tensorrt_llm/cpp/.conan" --workdir /code/tensorrt_llm --tmpfs /tmp:exec --volume .:/code/tensorrt_llm nvcr.io/nvidia/tensorrt-llm/devel:1.0.0
 
 docker pull nvcr.io/nvidia/tensorrt-llm/devel:1.0.0
 
